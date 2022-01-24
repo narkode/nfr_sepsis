@@ -2,7 +2,8 @@
 
 ## Overview
 
-This repository contains an Jupyter Notebook and SQL-code to run a query against the AmsterdamUMCdb to calculate the cumulative dose of norepinephrine, crystalloids, colloids and bloodproducts in septic patients. 
+This repository contains an Jupyter Notebook and SQL-code to run a query against the [Amsterdam
+UMC Critical Care Database](https://github.com/AmsterdamUMC/AmsterdamUMCdb) to calculate the cumulative dose of norepinephrine, crystalloids, colloids and bloodproducts in septic patients. 
 
 ## Usage
 
