@@ -14,6 +14,6 @@ The file 'sepsis.csv' has to be created by the reason_for_admission.ipynb notebo
 
     sepsis.to_csv('sepsis.csv')
 
-after the 'sepsis' DataFrame has been created. Copy the file 'sepsis.csv' into the 'data' folder.
+after the 'sepsis' DataFrame has been created. Copy the file 'sepsis.csv' into the root directory of this repository.
 
 
