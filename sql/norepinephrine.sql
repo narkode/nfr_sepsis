@@ -1,4 +1,4 @@
-SELECT admissionid, start, stop, dose, administered
+SELECT admissionid, start, stop, duration, dose, administered
 FROM drugitems
 WHERE ordercategoryid = 65 -- Spuitpompen
 AND itemid = 7229 -- Norepinephrine

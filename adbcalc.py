@@ -1,6 +1,5 @@
 def calculate_dose(start, stop, end_interval, dose, intake_type):
-    '''
-    This function calculates the complete dose of a medication or fluid in the
+    """This function calculates the complete dose of a medication or fluid in the
     interval start - stop. If stop > end_interval, the dose of the interval
     start - end_interval ist calculated. Complete dose is given in ml for
     fluids and in microgram for norepinephrine. In case of stop < end_interval,
@@ -14,13 +13,13 @@ def calculate_dose(start, stop, end_interval, dose, intake_type):
     dose: value from the "dose" row 
     intake_type: 1 - Norepinephrine (mg / h)
                  2 - FLuids (ml / h)
-    '''
+    """
 
     try:
         int(start)
     except ValueError:
         raise Exception("start must be a number")
-    
+
     try:
         int(stop)
     except ValueError:
@@ -41,9 +40,9 @@ def calculate_dose(start, stop, end_interval, dose, intake_type):
     except ValueError:
         raise Exception("intake_type must be a number")
 
-
-    # Select divisor 
-    # 
+    complete_dose = 0
+    # Select divisor
+    #
     # 3600 for norepinephrine (mg per hour to microgram)
     # 3600000 for fluids (ml per hour to mililiters)
     if intake_type == 1:
@@ -51,13 +50,15 @@ def calculate_dose(start, stop, end_interval, dose, intake_type):
     elif intake_type == 2:
         divisor = 3600000
         
-    # Dose is given before end of timeframe or 
-    # over the end of timeframe or 
+    # Dose is given before end of timeframe or
+    # over the end of timeframe or
     # after the timeframe:
     if start < end_interval:
         if stop <= end_interval:
-            return round((stop - start) / divisor * dose, 2)
+            complete_dose = round((stop - start) / divisor * dose, 2)
         elif stop > end_interval:
-            return round((end_interval - start) / divisor * dose, 2)
+            complete_dose = round((end_interval - start) / divisor * dose, 2)
     else:
-        return 0.0
+        complete_dose = 0.0
+
+    return complete_dose
